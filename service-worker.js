@@ -39,8 +39,6 @@ self.addEventListener('fetch', (event) => {
     );
 });
 
-
-
 // Update the service worker and remove old caches
 self.addEventListener('activate', (event) => {
     const cacheWhiteList = [CACHE_NAME];
