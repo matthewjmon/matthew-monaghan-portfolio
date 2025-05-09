@@ -11,7 +11,7 @@ const urlsToCache = [
     'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/fonts/bootstrap-icons.woff2?1fa40e8900654d2863d011707b9fb6f2'
 ];
 
-// Install the service worker and cache assets
+//Install the service worker and cache assets
 self.addEventListener('install', (event) => {
     console.log('[Service Worker] Installing...');
     event.waitUntil(
@@ -22,7 +22,7 @@ self.addEventListener('install', (event) => {
     );
 });
 
-// Serve cached assets during the fetch event
+//Serve cached assets during the fetch event
 self.addEventListener('fetch', (event) => {
     console.log('[Service Worker] Fetching:', event.request.url);
     event.respondWith(
@@ -39,7 +39,7 @@ self.addEventListener('fetch', (event) => {
     );
 });
 
-// Update the service worker and remove old caches
+//Update the service worker and remove old caches
 self.addEventListener('activate', (event) => {
     const cacheWhiteList = [CACHE_NAME];
     event.waitUntil(
