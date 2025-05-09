@@ -1,0 +1,305 @@
+/* body styling */
+body {
+    background-color: rgb(15, 23, 42);
+    color: white; 
+  }
+
+/* ---------------------------------------------------------------- */
+/* Sidebar styling */
+h1 {
+  cursor: pointer;
+}
+
+.nav-indicator {
+    display: inline-block;
+    height: 2px;
+    width: 32px;
+    background-color: #475569; 
+    transition: all 0.3s ease;
+  }
+  
+#sidebar-content {
+  margin-top: 5em;
+  margin-left: 15em;
+}
+
+.par-one {
+  color: #5eead4;
+  font-family: monospace;
+}
+
+#intro {
+  color: #cbd5e1
+}
+
+.par-intro,
+.link-icon,
+main p,
+.education-details {
+  color: #94a3b8;
+}
+
+.nav-item a {
+  color: #64748B
+}
+
+.nav-item a:hover,
+a:hover .link-icon {
+  color: white;
+}
+
+/* Active nav-section styling */
+.nav-link.active {
+  color: white;
+  font-weight: bold;
+}
+
+.nav-link:hover .nav-indicator,
+  .nav-link:focus .nav-indicator,
+  .nav-link.active .nav-indicator {
+    width: 64px;
+    background-color: #e2e8f0;
+  }
+
+/* Link icons styling */
+.link-icons {
+  margin-top: 25%;
+  padding-left: 20%;
+}
+
+.link-icon {
+  color: #64748B;
+  transition: color 0.3s ease;
+}
+
+.envelope-icon {
+  position: relative;
+  bottom: 5px;
+}
+
+/* ----------------------------------------------------------------- */
+/* profile picture styling */
+.profile-img-container {
+  position: relative;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.profile-pic {
+  object-fit: cover;
+  display: block;
+  position: relative;
+  border-radius: 2px;
+  z-index: 2;
+  filter: grayscale(100%) brightness(0.8) sepia(1) hue-rotate(120deg) saturate(3); /* test */
+  transition: filter 0.4s ease;
+}
+
+.profile-img-container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #64ffda; 
+  border-radius: 2px;
+  z-index: 1;
+  transition: all 0.3s ease; 
+}
+
+.profile-img-container:hover .profile-pic {
+  filter: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* main styling */
+.main {
+  margin-top: 8em;
+}
+
+/* -------------------------------------------------------------------- * /
+/* projects section styling */
+.project-card {
+  background-color: inherit;
+}
+
+.badge {
+  color: #5eead4;
+  background-color: rgba(44, 74, 71, 0.5);
+  cursor: pointer;
+  padding: 0.5em;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  background-color: rgba(99, 128, 233, 0.07);
+  box-shadow: 0 20px 30px -15px rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  cursor: pointer;
+}
+
+.project-card:hover .card-title,
+.project-card:hover .icon {
+  color: #5eead4;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Sections styling */
+#about,
+#work,
+#education,
+#skills {
+  margin-bottom: 10rem;
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* ----------------------------------------------------------------------- */
+/* Heading styling */
+.heading-number {
+  color: #5eead4;
+}
+
+.numbered-heading {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: #ccd6f6;
+  position: relative;
+}
+
+.numbered-heading::after {
+  content: "";
+  height: 1px;
+  background-color: #233554;
+  margin-left: 1.5rem;
+  width: 10rem;
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Skills section styling */
+.tech-card p,
+.personal-skill-card p {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.tech-card p::before,
+.personal-skill-card p::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #59f8e8;
+  font-size: 0.6em;
+  top: 0.5em;
+  font-family: monospace;
+}
+
+/* Style for the wrapper of skills */
+.tech-wrapper, .personal-skills-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Hover effect */
+.tech-card:hover, 
+.personal-skill-card:hover {
+  background-color: rgba(99, 128, 233, 0.07);
+  box-shadow: 0 20px 30px -15px rgba(100, 255, 218, 0.1);
+  cursor: pointer;
+}
+
+.tech-card:hover p,
+.personal-skill-card:hover p {
+  color: #64ffda;
+  font-weight: bold;
+}
+
+/* Skills subheading styling */
+.skills-subheading {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #e2e8f0;
+  border-left: 3px solid #5eead4;
+  padding-left: 0.5em;
+}
+
+.tech-card,
+.personal-skill-card {
+  width: 14rem;
+  border-radius: 8px;
+  margin: 0.3em;
+  padding: 0.3em;
+}
+
+.skills-divider {
+  border: none;
+  height: 1px;
+  background-color: #233554;
+  margin: 3rem 0;
+  opacity: 0.6;
+}
+
+/* ---------------------------------------------------------- */
+/* Education section styling */
+.education-list-item {
+  padding: 1em;
+}
+
+.education-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.education-date {
+  font-size: 1rem;
+  color: #94a3b8;
+}
+
+.education-list-item:hover {
+  transform: translateY(-6px);
+  background-color: rgba(99, 128, 233, 0.07);
+  box-shadow: 0 20px 30px -15px rgba(100, 255, 218, 0.1);
+  color: #64ffda;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------------------- */
+/* Cursor light styling */
+#cursor-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  background: radial-gradient(circle at 50% 50%, rgba(100, 255, 218, 0.04) 120px, transparent 300px);
+  mix-blend-mode: screen;
+}
+
+/* ------------------------------------------------------ */
+/* Footer styling */
+footer {
+  margin-bottom: 10rem;
+}
+
+footer p,
+footer a {
+  color: #64748b; 
+}
+
+.footer-link {
+  text-decoration: none;
+  font-weight: bold;
+}
