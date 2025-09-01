@@ -1,18 +1,20 @@
 const cursorLight = document.getElementById('cursor-light');
-const projectCards = document.querySelectorAll('.project-card')
+const projectCards = document.querySelectorAll('.project-card');
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-link")
+const navLinks = document.querySelectorAll(".nav-link");
 
-// Creating cursor light glow 
+// Cursor light glow
 document.addEventListener('mousemove', (e) => {
   const x = e.clientX;
   const y = e.clientY;
-  cursorLight.style.background = `
-    radial-gradient(circle at ${x}px ${y}px, rgba(99, 128, 233, 0.09) 120px, transparent 400px)
-  `;
+  if(cursorLight) {
+    cursorLight.style.background = `
+      radial-gradient(circle at ${x}px ${y}px, rgba(99, 128, 233, 0.09) 120px, transparent 400px)
+    `;
+  }
 });
 
-// Highlight corresponding nav link
+// Highlight nav link on scroll
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -23,16 +25,14 @@ const observer = new IntersectionObserver((entries) => {
             if (activeLink) activeLink.classList.add("active");
         }
     });
-}, {
-    threshold: 1
-});
+}, { threshold: 1 });
 
 sections.forEach(section => observer.observe(section));
 
 // Service Worker registration
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js')
+        navigator.serviceWorker.register('/service-worker.js')
             .then(registration => {
                 console.log('Service Worker registered with scope: ', registration.scope);
             })
